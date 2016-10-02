@@ -4,7 +4,7 @@
 
 
 def get_party_stats(families, table_size=6):
-    """This function determines the total number of guest and tables needed.
+    """This function determines the total number of guests and tables needed.
 
     Args:
         families(list): List of families that are list of members.
@@ -22,15 +22,8 @@ def get_party_stats(families, table_size=6):
     """
     guests = 0
     tables = 0
-    members = 0
     for list_item in families:
-        for x in list_item:
-            guests += 1
-            members += 1
-            if members > table_size:
-                tables += 1
-                members = 1
-        tables += 1
-        members = 0
+        guests = guests + len(list_item)
+        tables = tables + (-(-(len(list_item))//table_size))
 
     return (guests, tables)
