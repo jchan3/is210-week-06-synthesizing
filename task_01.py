@@ -8,7 +8,8 @@ def get_party_stats(families, table_size=6):
 
     Args:
         families(list): List of families that are list of members.
-        table_size(int, optional): Maximum number of seats at each table. Default: Six
+        table_size(int, optional): Maximum number of seats at each table.
+        Default: Six
 
     Returns:
         tuple: Total number of guests and Total number of tables.
@@ -31,5 +32,5 @@ def get_party_stats(families, table_size=6):
                 members = 1
         tables += 1
         members = 0
-        
+
     return (guests, tables)
